@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 
-
+import FriendsList from './FriendsList';
 
 
 class App extends Component {
@@ -27,13 +27,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.currentFriends.map(friend =>{
-          return (<div>
-            {
-              friend.name
-            }
-          </div>)
-        })}
+        {this.state.currentFriends.map((friend,i) =>{
+            return (
+              <FriendsList key={i} friend={friend} /> //passes all of our state to FriendsList and gives access to props
+            )
+          })
+        }
       </div>
     );
   }
