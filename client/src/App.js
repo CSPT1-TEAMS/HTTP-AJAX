@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link,Route} from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
@@ -7,14 +8,43 @@ const FriendsList = props => {
   return (
     <div>
       {props.friends.map(friend => (
-	<div>
+	<div><Link to={`/friends/${friend.id}`}>
 	  <div>Name: {friend.name}</div>
 	  <div>Email: {friend.email}</div>
 	  <div>Age: {friend.age}</div>
+    </Link>
 	</div>
       ))}
     </div>
   )
+}
+
+class FriendItem extends React.Component{ 
+  constructor(props){
+    super(props)
+    this.state = {
+      friend :{}
+    }
+  }
+ componentDidMount() {
+   console.log(this.props)
+   axios.get('http://localhost:5000/friends/' + this.props.match.params.id)
+  .then(result => {
+    console.log(result);
+    this.setState({friend: result.data})
+  })
+ }
+
+  render(){
+  return (
+
+    <div>
+      <div> Name : {this.state.friend.name}</div>
+      <div> Email : {this.state.friend.email} </div>
+      <div> Age : {this.state.friend.age} </div>
+      </div>
+    )
+  }
 }
 
 class AddFriendForm extends Component {
@@ -83,6 +113,7 @@ class App extends Component {
     return (
       <div className="App">
 	<AddFriendForm/>
+  <Route exact path="/friends/:id" component = {FriendItem}/>
 	<FriendsList friends={this.state.friends}/>
       </div>
     );

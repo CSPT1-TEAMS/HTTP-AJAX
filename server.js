@@ -57,7 +57,9 @@ app.get('/friends', (req, res) => {
 
 app.get('/friends/:id', (req, res) => {
   const { id } = req.params;
-  const friend = friends.filter(friend => id === friend.id);
+  const friend = friends.filter(friend => id == friend.id);
+  console.log(friend)
+  console.log(id)
   res.status(200).json(friend);
 })
 
