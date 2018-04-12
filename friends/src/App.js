@@ -17,6 +17,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import FriendsList from './Components/FriendsList';
+import NewFriendForm from './Components/NewFriendForm';
 
 const PORT = 5000;
 const URL_BASE = `http://localhost:${PORT}`;
@@ -44,8 +45,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <div className="List">
-          <FriendsList friends={this.state.friends} />
+        <div className="friends" style={{ width: '800px', border: 'thin solid black' }}>
+          <FriendsList friends={this.state.friends}  />
+          <NewFriendForm />
         </div>
       </div>
     );

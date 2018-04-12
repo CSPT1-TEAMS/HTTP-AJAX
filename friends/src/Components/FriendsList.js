@@ -20,7 +20,7 @@ const listFriends = friends => {
 const FriendsList = (props) => {
 
   return (
-    <div className="friends-list" style={{ width: '300px' }}>
+    <div className="friends-list" style={{ float: 'left', width: '48%', border: 'thin solid black' }} >
       <h1>Friends List</h1>
       {listFriends(props.friends)}
     </div>
