@@ -46,14 +46,16 @@ class AddFriend extends Component {
       const {name, age, email } = this.state;
   
       return(
-        <div>
+        <div className="Card-item">
           <Card>
-            <CardBody>         
+            <CardBody> 
+            <div>       
             <form id="adding" onSubmit={this.handleFormSubmit}>
               <input type="text" value={name} onChange={this.handleFormName} placeHolder="Name"/>
               <input type="text" value={age} onChange={this.handleFormAge} placeHolder="Age"/>
               <input type="text" value={email} onChange={this.handleFormEmail} placeHolder="Email"/>
             </form>
+            </div>   
             </CardBody> 
             <CardFooter>
               <button type="submit" form="adding">Send Data!</button>

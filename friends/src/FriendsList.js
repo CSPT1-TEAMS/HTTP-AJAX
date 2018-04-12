@@ -8,11 +8,13 @@ const FriendsList = (props) => {
     <div>
       <Card>
         <CardTitle>
-          <div>Friend's name: {props.friend.name}</div>
+          <div className="Card-header">Friend's name: {props.friend.name}</div>
         </CardTitle>  
         <CardBody>
-          <div>Friends age: {props.friend.age}</div>
-          <div>Friends email: {props.friend.email}</div>
+          <div className="Card-item">
+            <div>Friends age: {props.friend.age}</div>
+            <div>Friends email: {props.friend.email}</div>
+          </div>
         </CardBody>
       </Card>  
     </div>
