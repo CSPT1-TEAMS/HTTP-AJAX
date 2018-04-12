@@ -29,9 +29,8 @@ class AddFriendForm extends Component {
         console.log(response);
         window.location = '/';
       })
-      .catch((error) => console.log(error))
-    
-   this.resetState();
+      .then(() => this.resetState())
+      .catch((error) => console.log(error))    
   }
 
   render() {
