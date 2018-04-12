@@ -5,8 +5,8 @@
    Version 0.0.1
    ------------------------------
    Updated 2018-04-12T12:36:19
-   Version 0.0.2
-   Form adds a new friend
+   Version 0.0.3
+   Form adds a new friend; added focusHandler
    ------------------------------
  */
 
@@ -33,6 +33,9 @@ class NewFriendForm extends Component {
     this.props.newFriendHandler(this.state);
   }
 
+  focusHandler = e => this.setState({ [e.target.id]: '' });
+    
+
   render() {
     return (
       <div className="new-friend-form" style={{ float: 'right', width: '48%', border: 'thin solid black' }}>
@@ -48,17 +51,31 @@ class NewFriendForm extends Component {
                 id="name"
                 type="text"
                 value={this.state.name}
-                style={{ width: '75%' }} />
+                style={{ width: '75%' }}
+                onFocus={ this.focusHandler }
+              />
             </label>
           </p>
           <p>
             <label style={{ width: '25' }}>Age:
-              <input id="age" type="text" value={this.state.age} style={{ width: '75%' }} />
+              <input
+                id="age"
+                type="text"
+                value={this.state.age}
+                style={{ width: '75%' }}
+                onFocus={ this.focusHandler }
+              />
             </label>
           </p>
           <p>
             <label style={{ width: '25%' }}>Email:
-              <input id="email" type="text" value={this.state.email} style={{ width: '75%' }} />
+              <input
+                id="email"
+                type="text"
+                value={this.state.email}
+                style={{ width: '75%' }}
+                onFocus={ this.focusHandler }
+              />
             </label>
           </p>
           <p>
