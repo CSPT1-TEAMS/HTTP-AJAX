@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {Link,Route} from 'react-router-dom';
-import logo from './logo.svg';
+import {Link,Route,Switch} from 'react-router-dom';
 import './App.css';
 import axios from 'axios';
 
@@ -19,7 +18,7 @@ const FriendsList = props => {
   )
 }
 
-class FriendItem extends React.Component{ 
+class FriendItem extends Component{ 
   constructor(props){
     super(props)
     this.state = {
@@ -27,10 +26,10 @@ class FriendItem extends React.Component{
     }
   }
  componentDidMount() {
-   console.log(this.props)
+   console.log('props',this.props)
    axios.get('http://localhost:5000/friends/' + this.props.match.params.id)
   .then(result => {
-    console.log(result);
+    console.log('result',result);
     this.setState({friend: result.data})
   })
  }
@@ -112,9 +111,16 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+    <Link to ='/' component = {FriendsList}>Home</Link> 
 	<AddFriendForm/>
-  <Route exact path="/friends/:id" component = {FriendItem}/>
-	<FriendsList friends={this.state.friends}/>
+
+  <Switch>
+  <Route path="/friends/:id" component = {FriendItem}/>
+	<Route path = "/" render = {props => (
+    <FriendsList friends = {this.state.friends}/>
+  )}/>
+
+  </Switch>
       </div>
     );
   }
