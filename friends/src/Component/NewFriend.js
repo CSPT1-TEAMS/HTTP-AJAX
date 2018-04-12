@@ -26,7 +26,10 @@ class NewFriend extends Component {
   handleTaskInput = (event) => {
     const newFriend = event.target.value;
     this.setState({ 
-        newFriend: newFriend
+        newFriend: newFriend,
+        name: name,
+        age: age,
+        email: email,
     });
   };
 
@@ -50,15 +53,15 @@ class NewFriend extends Component {
         <Form onSubmit={this.addFriend} inline>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                 <Label for="Name" className="mr-sm-2">Name</Label>
-                <Input onChange={this.handleTaskInput} type="text" name="text" id="Name" placeholder="Name here" />
+                <Input onChange={this.handleTaskInput} value={this.state.newFriend} type="text" name="text" id="Name" placeholder="Name here" />
             </FormGroup>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                 <Label for="Age" className="mr-sm-2">Age</Label>
-                <Input onChange={this.handleTaskInput} type="number" name="Age" id="Age" placeholder="Age here" />
+                <Input onChange={this.handleTaskInput} value={this.state.newFriend} type="number" name="Age" id="Age" placeholder="Age here" />
             </FormGroup>
             <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                 <Label for="exampleEmail" className="mr-sm-2">Email</Label>
-                <Input onChange={this.handleTaskInput} type="email" name="email" id="exampleEmail" placeholder="Email here" />
+                <Input onChange={this.handleTaskInput} value={this.state.newFriend} type="email" name="email" id="exampleEmail" placeholder="Email here" />
             </FormGroup>
             <Button>Submit</Button>
         </Form>
