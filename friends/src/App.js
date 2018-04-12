@@ -8,6 +8,10 @@
    Version 0.0.2
    Changed ListOfFriends to FriendsList
    ------------------------------
+   Updated 2018-04-12T12:35:12
+   Version 0.0.3
+   Added AddNewFriend handler
+   ------------------------------
  */
 
 import React, { Component } from 'react';
@@ -38,6 +42,10 @@ class App extends Component {
       .catch(err => console.error(err));
   }
 
+  newFriendHandler = newFriend => {
+    this.setState({ friends: [...this.state.friends, newFriend] });
+  }
+
   render() {
     return (
       <div className="App">
@@ -47,7 +55,7 @@ class App extends Component {
         </header>
         <div className="friends" style={{ width: '800px', border: 'thin solid black' }}>
           <FriendsList friends={this.state.friends}  />
-          <NewFriendForm />
+          <NewFriendForm newFriendHandler={this.newFriendHandler} />
         </div>
       </div>
     );
