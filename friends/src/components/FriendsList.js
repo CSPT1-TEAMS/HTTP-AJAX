@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 class FriendsList extends Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class FriendsList extends Component {
             );
           })}
         </ul>
+        <Link to="/addFriend"><button>NewFriend</button></Link>
       </div>
     );
   }
