@@ -17,20 +17,28 @@ handleSubmit = event =>{
     
 
     axios.post("http://localhost:5000/friends", this.state)
+    .then(response => console.log(response))
     .then( () => window.location.href ="/") 
+    .catch(error => console.log(error))
 }    
     
     render(){
-        return (
-            <div>
-                <form onSubmit= {this.handleSubmit}>
-                <label>
-                    Person Name:
-                    <input type= "text" name="name" onChange= {this.handleChange}/>
-                </label>
-                <button type="submit">Add </button>
-                </form>
-                </div> 
-        )
+           return <div>
+               <form onSubmit={this.handleSubmit}>
+                 <label>
+                   Name:
+                   <input type="text" name="name" value={this.state.name} className="inputData" onChange={this.handleChange} />
+                 </label>
+                 <label>
+                   Age:
+                   <input type="text" name="age" value={this.state.age} className="inputData" onChange={this.handleChange} />
+                 </label>
+                 <label>
+                   Email:
+                   <input type="text" name="email" value={this.state.email} className="inputData" onChange={this.handleChange} />
+                 </label>
+                 <button type="submit">Add </button>
+               </form>
+             </div>;
     }
 }
