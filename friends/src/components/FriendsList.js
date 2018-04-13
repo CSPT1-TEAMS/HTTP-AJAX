@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import {Link} from "react-router-dom";
-import AddFriend from "./AddFriend.js";
+import {Link} from "react-router-dom";
+// import AddFriend from "./AddFriend.js";
 
 class FriendsList extends Component {
   constructor(props) {
@@ -39,8 +39,8 @@ class FriendsList extends Component {
             );
           })}
         </ul>
-        <AddFriend /> 
-        {/* <Link to="/addFriend"><button>NewFriend</button></Link> */}
+        {/* <AddFriend />  */}
+        <Link to="/addFriend"><button>NewFriend</button></Link>
       </div>
     );
   }
