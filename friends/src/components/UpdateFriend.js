@@ -9,6 +9,19 @@ export default class AddFriend extends Component {
 
     }
 
+
+ componentDidMount() {
+    const id = this.props.match.params.id;
+    axios
+      .get(`http://localhost:5000/friends/${id}`)
+      .then(response => {
+        this.setState(() => ({ friends: response.data }));
+      })
+      .catch(error => {
+        console.error("error", error);
+      });
+  }
+
 handleChange = event => {
     this.setState({ [event.target.name]: event.target.value})
 }
