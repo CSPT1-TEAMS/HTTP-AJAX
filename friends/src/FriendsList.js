@@ -1,22 +1,11 @@
 import React from 'react';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, CardHeader, CardFooter } from 'reactstrap';
-
+import AddFriendCard from './AddFriendCard';
 
 const FriendsList = (props) => {
   return (
-    <div>
-      <Card>
-        <CardTitle>
-          <div className="Card-header">Friend's name: {props.friend.name}</div>
-        </CardTitle>  
-        <CardBody>
-          <div className="Card-item">
-            <div>Friends age: {props.friend.age}</div>
-            <div>Friends email: {props.friend.email}</div>
-          </div>
-        </CardBody>
-      </Card>  
+    <div className="Card-container">
+{/* ☞ 88e5661d-634b-4514-b9d4-212ec9a277f4 */}
+      <AddFriendCard {...props.friend}/> 
     </div>
   );
 }
