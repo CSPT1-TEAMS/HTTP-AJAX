@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import FriendsList from "./components/FriendsList";
-import AddFriend from "./components/AddFriend.js";
-import UpdateFriend from "./components/UpdateFriend.js";
+import FriendsList from "./FriendsList";
+// import AddFriend from "./components/AddFriend.js";
+// import UpdateFriend from "./components/UpdateFriend.js";
 
 import {Route} from 'react-router-dom';
 
@@ -11,11 +11,8 @@ import {Route} from 'react-router-dom';
   render() {
     return (
     <div className="App">
-    {/* <FriendsList/> */}
-    <Route exact path="/" component={FriendsList}/>
-    <Route path="/addFriend" component={AddFriend}/>
-    <Route path="/updateFriend/:id" component={UpdateFriend}/>
-    {/* <Route path="/deleteFriend" component={}/> */}
+    <FriendsList/>
+   
       </div>
       ) 
   }
