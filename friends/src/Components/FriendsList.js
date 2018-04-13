@@ -8,13 +8,17 @@
    Version 0.0.2
    Changed name to FriendsList.js
    ------------------------------
+   Updated 2018-04-12T14:35:08
+   Version 0.0.3
+   Added key to Friend Component
+   ------------------------------
  */
 
 import React from 'react';
 import Friend from './Friend';
 
 const listFriends = friends => {
-  return friends.map((f, i) => <Friend friend={f} />)
+  return friends.map(f => <Friend friend={f} key={f.id} />)
 }
 
 const FriendsList = (props) => {

@@ -12,6 +12,10 @@
    Version 0.0.3
    Added AddNewFriend handler
    ------------------------------
+   Updated 2018-04-12T17:02:19
+   Version 0.0.4
+   Added nextId to state and new friend data
+   ------------------------------
  */
 
 import React, { Component } from 'react';
@@ -30,6 +34,7 @@ class App extends Component {
 
   state = {
     friends: [],
+    nextId: 0
   }
 
   componentDidMount() {
@@ -38,12 +43,17 @@ class App extends Component {
       url: `${URL_BASE}/friends`
     };
     axios(options)
-      .then(res => this.setState({ friends: res.data }))
+      .then(res => this.setState({ friends: res.data, nextId: res.data.length }))
       .catch(err => console.error(err));
   }
 
   newFriendHandler = newFriend => {
-    this.setState({ friends: [...this.state.friends, newFriend] });
+    const nextId = this.state.nextId + 1;
+    newFriend.id = nextId;
+    this.setState({
+      friends: [...this.state.friends, newFriend],
+      nextId
+    });
   }
 
   render() {
