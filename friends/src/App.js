@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
 import AddFriend from './AddFriend';
@@ -29,7 +30,10 @@ class App extends Component {
       <div className="App">
         {this.state.currentFriends.map((friend,i) =>{
             return (
-              <FriendsList key={i} friend={friend} /> //passes all of our state to FriendsList and gives access to props
+              // Add ID to link to seperately
+              <Link to={'/friend/:${friend.id}'}>
+                <FriendsList key={i} friend={friend} />
+              </Link> //passes all of our state to FriendsList and gives access to props
             );
           })
         }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 class AddFriend extends Component {
@@ -49,7 +50,11 @@ class AddFriend extends Component {
             <input type="text" value={age} onChange={this.handleFormAge} placeHolder="Age"/>
             <input type="text" value={email} onChange={this.handleFormEmail} placeHolder="Email"/>
           </form>
-          <button type="submit" form="adding">Send Data!</button>
+          {/* can link to root here */}
+
+          <Link to={'/'}>
+            <button type="submit" form="adding">Send Data!</button>
+          </Link>
         </div>
   
         // render form here, get it passed in event function to setState, also, add button 'Submit'
