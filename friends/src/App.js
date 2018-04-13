@@ -13,6 +13,8 @@ import {Route} from 'react-router-dom';
     {/* <FriendsList/> */}
     <Route exact path="/" component={FriendsList}/>
     <Route path="/addFriend" component={AddFriend}/>
+    {/* <Route path="/updateFriend" component={}/>
+    <Route path="/deleteFriend" component={}/> */}
       </div>
       ) 
   }
