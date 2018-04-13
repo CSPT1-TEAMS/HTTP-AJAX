@@ -12,6 +12,9 @@
    Version 0.0.4
    Submit handler works
    ------------------------------
+   Updated 2018-04-12T17:14:34
+   Version 0.1.0
+   ------------------------------
  */
 
 import React, { Component } from 'react';

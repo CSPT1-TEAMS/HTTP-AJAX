@@ -12,6 +12,9 @@
    Version 0.0.3
    Added key to Friend Component
    ------------------------------
+   Updated 2018-04-12T17:14:07
+   Version 0.1.0
+   ------------------------------
  */
 
 import React from 'react';

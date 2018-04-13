@@ -8,6 +8,9 @@
    Version 0.0.2
    Added width to enclosing div
    ------------------------------
+   Updated 2018-04-12T17:15:01
+   Version 0.1.0
+   ------------------------------
  */
 
 import React from 'react';
