@@ -8,7 +8,7 @@ const AddFriendCard = props => {
     <Row className="Card-row">
       <Col sm="4">
         <Card className="Card-item">
-          <CardHeader>
+          <CardHeader className="Note-header">
            <h1> {props.name}</h1>
           </CardHeader>
           <CardBody>

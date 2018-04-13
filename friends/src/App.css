@@ -53,7 +53,7 @@
 }
 .Card-container {
   display: inline-block;
-  width: 800px;
+  width: 360px;
   margin: 0 auto;
   text-align: left;
   background: rgb(91, 118, 145);
@@ -74,8 +74,8 @@
 	margin: 10px;
 	border: 1px solid #eee;
 	box-shadow: 0 2px 2px #ccc; 
-	width: 70%;
-	/* padding: 20px;*/
+	width: 330px;
+	padding: 2px 2px;
 }
 
 .Card-item {
@@ -83,8 +83,8 @@
 	margin: 10px;
 	border: 1px solid #eee;
 	box-shadow: 0 2px 2px #ccc;
-	width: 30%;
-  padding: 10px 20px 10px 20px;
+	width: 280px;
+  padding: 1px 2px 1px 2px;
   background: lightcyan;
   color: black;
 }
@@ -189,7 +189,7 @@
 
 .Note-header {
   background-color: rgb(14, 124, 158);
-  height: 20pt;
+  height: 40pt;
   width: 175px;
   margin: 10px 10px 0px;
   padding: 0px 0px 0px 0px;
@@ -230,7 +230,7 @@
   font: inherit;
   padding: 6px 10px;
   display: block;
-  width: 100%;
+  width: 50%;
   box-sizing: border-box;
 }
 
@@ -240,7 +240,7 @@
 }
 
 .btn-NavButton {
-  display: flex;
+  display: inline-flex;
   direction: row;
   justify-content: center;
   align-content: center;
@@ -249,7 +249,7 @@
   
   padding: 2px;
   width: 140px;
-  height: 35px;
+  height: 50px;
   margin: 5px;
   /*margin-top: 5px;
   margin-right: 5px;

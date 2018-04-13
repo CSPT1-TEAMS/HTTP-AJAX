@@ -28,13 +28,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <AddFriend />
         {this.state.currentFriends.map((friend,i) =>{
             return (
               <FriendsList key={i} friend={friend} /> //passes all of our state to FriendsList and gives access to props
             );
           })
         }
-        <AddFriend />
       </div>
     )
   }
