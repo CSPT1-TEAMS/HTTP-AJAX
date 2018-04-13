@@ -20,6 +20,10 @@
    Version 0.1.0
    Added POST
    ------------------------------
+   Updated 2018-04-13T09:37:31
+   Version 0.1.1
+   Factored out friendsServer code
+   ------------------------------
  */
 
 import React, { Component } from 'react';
@@ -40,25 +44,25 @@ class App extends Component {
     friends: [],
   }
 
-  componentDidMount() {
-    const options = {
-      method: 'GET',
-      url: `${URL_BASE}/friends`
-    };
+  friendsServer = options => {
     axios(options)
       .then(res => this.setState({ friends: res.data }))
       .catch(err => console.error(err));
   }
 
+  componentDidMount() {
+    this.friendsServer({
+      method: 'GET',
+      url: `${URL_BASE}/friends`
+    })
+  }
+
   newFriendHandler = newFriend => {
-    const options = {
+    this.friendsServer({
       method: 'POST',
       url: `${URL_BASE}/friends`,
       data: newFriend
-    }
-    axios(options)
-      .then(res => this.setState({ friends: res.data }))
-      .catch(err => console.error(err));
+    });
   }
 
   render() {
