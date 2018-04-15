@@ -19,6 +19,10 @@
    Version 0.1.1
    Adjusted styling to place form appropriately
    ------------------------------
+   Updated 2018-04-15T08:47:44
+   Version 0.1.2
+   Replaced styled wrapping div with unstyled
+   ------------------------------
  */
 
 import React from 'react';
@@ -31,9 +35,7 @@ const listFriends = friends => {
 
 const FriendsList = (props) => {
   return (
-    <div className="friends-list-component"
-         style={{ display: 'block', width: '50%', height: '100%' }}
-    >
+    <div className="friends-list-component">
       <article className="friends-list"
                style={{ display: 'block', float: 'left', padding: '10px', margin: '10px'}}
       >
@@ -44,9 +46,6 @@ const FriendsList = (props) => {
         </header>
         {listFriends(props.friends)}
       </article>
-      
-      <FriendForm />
-
     </div>
   );
 };

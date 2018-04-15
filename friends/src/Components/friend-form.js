@@ -23,6 +23,10 @@
    Version 0.1.2
    Adjusted styling to place appropriately
    ------------------------------
+   Updated 2018-04-15T08:50:42
+   Version 0.1.3
+   Placed styling into article; made wrapping div unstyled
+   ------------------------------
  */
 
 import React, { Component } from 'react';
@@ -58,10 +62,11 @@ class FriendForm extends Component {
 
   render() {
     return (
-      <div className="friend-form-component"
-           style={{ width: '30%', float: 'left', padding: '10px', margin: '70px', border: 'thin solid black' }}
-      >
-        <article className="friend-form">
+      <div className="friend-form-component">
+        <article className="friend-form"
+                 style={{ width: '300px', float: 'left', padding: '10px',
+                          margin: '10px', marginTop: '87px', border: 'thin solid black' }}
+        >
           <header className="friend-form-header">
             <h1 style={{backgroundColor:'cyan'}}>New Friend Form</h1>
           </header>
