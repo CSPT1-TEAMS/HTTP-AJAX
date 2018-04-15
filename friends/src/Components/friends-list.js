@@ -18,7 +18,7 @@
  */
 
 import React from 'react';
-import Friend from './Friend';
+import Friend from './friend';
 
 const listFriends = friends => {
   return friends.map(f => <Friend friend={f} key={f.id} />)

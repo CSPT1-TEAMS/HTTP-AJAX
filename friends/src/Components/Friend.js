@@ -11,6 +11,10 @@
    Updated 2018-04-12T17:15:01
    Version 0.1.0
    ------------------------------
+   Updated 2018-04-14T22:08:23
+   Version 0.1.1
+   Refactoring for stretch
+   ------------------------------
  */
 
 import React from 'react';
@@ -20,10 +24,10 @@ const Friend = (props) => {
   const { name, age, email, id } = props.friend;
 
   return (
-    <div className="friend" key={id} style={{ width: '300px', border: 'thick solid black' }} >
-      <div className="name" >{name}</div>
-      <div className="age" >{age}</div>
-      <div className="email" style={{ paddingBottom: '30px' }}>{email}</div>
+    <div className="friend" key={id} style={{ width: '300px', border: 'solid black' }} >
+      <p className="name" style={{ marginTop: '10px' }} >{name}</p>
+      <p className="age" >{age}</p>
+      <p className="email" style={{ marginBottom: '10px' }}>{email}</p>
     </div>
   )
 }

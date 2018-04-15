@@ -4,19 +4,30 @@
    Created 2018-04-14T20:30:38
    Version 0.1.0
    ------------------------------
+   Updated 2018-04-14T23:26:37
+   Version 0.1.1
+   Routes work; factored out listRoutes; added Friends
+   ------------------------------
  */
 
 import React, { Component} from 'react';
 import { Route } from 'react-router-dom';
 
 import routeData from '../routes/route-data';
+import FriendsList from '../components/friends-list';
 
-const Routes = () => {
+const listRoutes = (routes, friendProps) =>
+  routes.map(({ path, exact, Component }, i) => (
+    <Route path={path} exact={exact} key={i}
+    render={ props => (<Component {...props} {...friendProps} />)} />
+  ));
+
+const Routes = (friendProps) => {
+
   return (
-    <div>
-      {routeData.map((route, i) => (
-        <Route path={route.path} exact={route.exact} component={route.component} key={i*2+1} />
-      ))};
+    <div className="routes">
+      {listRoutes(routeData, friendProps)}
+      <Route path="/friends" exact render={ () => <h1>Friends</h1> } />
     </div>
   )
 }

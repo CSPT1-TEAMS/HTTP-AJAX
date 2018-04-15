@@ -24,9 +24,10 @@
    Version 0.1.1
    Factored out friendsServer code
    ------------------------------
-   Updated 2018-04-14T21:18:35
-   Version 0.2.1
-   Working on stretch; created new NavBar, Routes, route-data
+   Updated 2018-04-14T23:36:38
+   Version 0.2.2
+   Working on stretch; created new NavBar, Routes, route-data;
+   changed Route to Routes
    ------------------------------
  */
 
@@ -39,6 +40,7 @@ import './App.css';
 
 import NavBar from './components/navbar';
 import Routes from './routes/routes';
+import Friend from './components/friend';
 
 const PORT = 5000;
 const URL_BASE = `http://localhost:${PORT}`;
@@ -79,10 +81,11 @@ class App extends Component {
         </header>
         <div className="friends" style={{ width: '800px', border: 'thin solid black' }}>
           <NavBar />
-          <Route friends={this.state.friends} />
+          <Routes friends={this.state.friends} />
+          
         </div>
       </div>
-    );
+    )
   }
 }
 
