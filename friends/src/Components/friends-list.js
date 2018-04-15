@@ -15,23 +15,40 @@
    Updated 2018-04-12T17:14:07
    Version 0.1.0
    ------------------------------
+   Updated 2018-04-15T08:40:35
+   Version 0.1.1
+   Adjusted styling to place form appropriately
+   ------------------------------
  */
 
 import React from 'react';
 import Friend from './friend';
+import FriendForm from './friend-form';
 
 const listFriends = friends => {
   return friends.map(f => <Friend friend={f} key={f.id} />)
 }
 
 const FriendsList = (props) => {
-
   return (
-    <div className="friends-list" style={{ float: 'left', width: '48%', border: 'thin solid black' }} >
-      <h1>Friends List</h1>
-      {listFriends(props.friends)}
+    <div className="friends-list-component"
+         style={{ display: 'block', width: '50%', height: '100%' }}
+    >
+      <article className="friends-list"
+               style={{ display: 'block', float: 'left', padding: '10px', margin: '10px'}}
+      >
+        <header className="friends-list-header">
+          <h1 style={{backgroundColor: 'yellow'}}>
+            Friends List
+          </h1>
+        </header>
+        {listFriends(props.friends)}
+      </article>
+      
+      <FriendForm />
+
     </div>
-  )
-}
+  );
+};
 
 export default FriendsList;

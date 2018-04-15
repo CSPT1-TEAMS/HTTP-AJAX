@@ -24,7 +24,7 @@ const Friend = (props) => {
   const { name, age, email, id } = props.friend;
 
   return (
-    <div className="friend" key={id} style={{ width: '300px', border: 'solid black' }} >
+    <div className="friend" key={id} style={{ width: '300px', border: 'solid black', backgroundColor: '#ccc' }} >
       <p className="name" style={{ marginTop: '10px' }} >{name}</p>
       <p className="age" >{age}</p>
       <p className="email" style={{ marginBottom: '10px' }}>{email}</p>
