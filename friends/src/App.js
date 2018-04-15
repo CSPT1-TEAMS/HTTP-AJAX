@@ -77,10 +77,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <div className="friends" style={{ width: '800px', border: 'thin solid black' }}>
+        <div className="Friends" style={{ width: '100%', border: 'thin solid black' }}>
           <NavBar />
           <Routes friends={this.state.friends} />
-          
         </div>
       </div>
     )

@@ -13,13 +13,13 @@ import routeData from '../routes/route-data';
 
 const NavBar = () => {
   return (
-    <div style={{ width: 'auto' }}>
-      {routeData.map((route, i) => (
-      <Link to={route.path} key={i*2} style={{ padding: '10px' }}>
-        {route.name}
+    <nav style={{ width: 'auto' }}>
+      {routeData.map(({path, name}, i) => (
+      <Link to={path} key={i*2} style={{ padding: '10px' }}>
+        {name}
       </Link>
       ))}
-    </div>
+    </nav>
   );
 }
 
