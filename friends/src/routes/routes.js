@@ -10,11 +10,10 @@
    ------------------------------
  */
 
-import React, { Component} from 'react';
+import React from 'react';
 import { Route } from 'react-router-dom';
 
 import routeData from '../routes/route-data';
-import FriendsList from '../components/friends-list';
 
 const listRoutes = (routes, friendProps) =>
   routes.map(({ path, exact, Component }, i) => (

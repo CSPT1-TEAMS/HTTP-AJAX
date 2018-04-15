@@ -32,7 +32,6 @@
  */
 
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 import logo from './logo.svg';
@@ -40,7 +39,6 @@ import './App.css';
 
 import NavBar from './components/navbar';
 import Routes from './routes/routes';
-import Friend from './components/friend';
 
 const PORT = 5000;
 const URL_BASE = `http://localhost:${PORT}`;
