@@ -34,9 +34,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import logo from './logo.svg';
-import './App.css';
-
 import NavBar from './components/navbar';
 import Routes from './routes/routes';
 
@@ -74,10 +71,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
         <div className="Friends" style={{ width: '100%', border: 'thin solid black' }}>
           <NavBar />
           <Routes friends={this.state.friends} newFriend={this.newFriendHandler} />

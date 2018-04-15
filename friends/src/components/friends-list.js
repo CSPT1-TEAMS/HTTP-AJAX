@@ -28,23 +28,36 @@
 import React from 'react';
 import Friend from './friend';
 
-const listFriends = friends => {
-  return friends.map(f => <Friend friend={f} key={f.id} />)
+const friendsStyles = {
+  display: 'flex',
+  flexDirection: 'column',
+  flexWrap: 'wrap',
+  height: '67vh',
 }
+
+const articleStyles = {
+  display: 'block',
+  float: 'left',
+  padding: '10px', margin: '10px',
+}
+
+const listFriends = friends => friends.map(f => <Friend friend={f} key={f.id} />)
 
 const FriendsList = (props) => {
   return (
     <div className="friends-list-component">
     <h1>{props.name}</h1>
       <article className="friends-list"
-               style={{ display: 'block', float: 'left', padding: '10px', margin: '10px'}}
+               style={articleStyles}
       >
         <header className="friends-list-header">
           <h1 style={{backgroundColor: 'yellow'}}>
             Friends List
           </h1>
         </header>
-        {listFriends(props.friends)}
+	<div style={friendsStyles} className="friends-wrapper">
+          {listFriends(props.friends)}
+	</div>
       </article>
     </div>
   );
