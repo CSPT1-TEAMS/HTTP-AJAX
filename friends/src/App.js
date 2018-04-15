@@ -24,16 +24,21 @@
    Version 0.1.1
    Factored out friendsServer code
    ------------------------------
+   Updated 2018-04-14T21:18:35
+   Version 0.2.1
+   Working on stretch; created new NavBar, Routes, route-data
+   ------------------------------
  */
 
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 
 import logo from './logo.svg';
 import './App.css';
 
-import FriendsList from './Components/FriendsList';
-import NewFriendForm from './Components/NewFriendForm';
+import NavBar from './components/navbar';
+import Routes from './routes/routes';
 
 const PORT = 5000;
 const URL_BASE = `http://localhost:${PORT}`;
@@ -64,7 +69,7 @@ class App extends Component {
       data: newFriend
     });
   }
-
+  
   render() {
     return (
       <div className="App">
@@ -73,8 +78,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <div className="friends" style={{ width: '800px', border: 'thin solid black' }}>
-          <FriendsList friends={this.state.friends}  />
-          <NewFriendForm newFriendHandler={this.newFriendHandler} />
+          <NavBar />
+          <Route friends={this.state.friends} />
         </div>
       </div>
     );
