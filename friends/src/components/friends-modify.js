@@ -9,7 +9,7 @@
 import React from 'react';
 
 const FriendsModify = (props) => (
-  <h1>Friends Modify</h1>
+  <h1>{props.name}</h1>
 );
 
 export default FriendsModify;

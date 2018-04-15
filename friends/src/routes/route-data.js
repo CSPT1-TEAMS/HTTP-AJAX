@@ -10,6 +10,7 @@
    ------------------------------
  */
 
+import FriendsList from '../components/friends-list';
 import FriendsListWithForm from '../components/friends-list-with-form';
 import FriendsModify from '../components/friends-modify';
 import FriendsDelete from '../components/friends-delete';
@@ -18,23 +19,29 @@ export default [
   {
     name: 'Friends Home',
     path: '/friends',
-    Component: 'Friends',
+    Component: 'FriendsHome',
     exact: true
   },
   {
-    name: 'Friends List',
+    name: 'List Friends',
     path: '/friends/list',
+    Component: FriendsList,
+    exact: true
+  },
+  {
+    name: 'New Friends',
+    path: '/friends/list/new',
     Component: FriendsListWithForm,
     exact: true
   },
   {
-    name: 'Friends Modify',
+    name: 'Modify Friends',
     path: '/friends/list/modify',
     Component: FriendsModify,
     exact: false
   },
   {
-    name: 'Friends Delete',
+    name: 'Delete Friends',
     path: '/friends/list/delete',
     Component: FriendsDelete,
     exact: false

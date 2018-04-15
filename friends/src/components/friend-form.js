@@ -44,6 +44,7 @@ class FriendForm extends Component {
   defaultFriend = {name:'New Friend',age:0,email:'email@abc.com'};
 
   componentDidMount() {
+    console.log('FRIEND FORM MOUNTED; PROPS: ', this.props);
     this.setState(Object.assign(this.defaultFriend, this.state.friend));
   }
 
@@ -54,8 +55,9 @@ class FriendForm extends Component {
   }
 
   submitHandler = e => {
+    console.log('FRIEND FORM SUBMIT HANDLER INVOKED; E:', e);
     e.preventDefault();
-    this.props.newFriendHandler(this.state);
+    this.props.newFriend(this.state);
   }
 
   focusHandler = e => this.setState({ [e.target.name]: '' });
@@ -71,8 +73,8 @@ class FriendForm extends Component {
             <h1 style={{backgroundColor:'cyan'}}>New Friend Form</h1>
           </header>
           <form
-            className="friend-form-form"
-            id="friend-form-id"
+            className="friend-form"
+            id="form"
             style={{ display: 'block', width: '100%' }}
             onSubmit={ this.submitHandler }
           >
@@ -118,7 +120,7 @@ class FriendForm extends Component {
             <p>
               <button
                 type="submit"
-                form="addFriendForm"
+                form="form"
               >
                 Submit
               </button>

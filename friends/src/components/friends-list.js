@@ -35,6 +35,7 @@ const listFriends = friends => {
 const FriendsList = (props) => {
   return (
     <div className="friends-list-component">
+    <h1>{props.name}</h1>
       <article className="friends-list"
                style={{ display: 'block', float: 'left', padding: '10px', margin: '10px'}}
       >

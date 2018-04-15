@@ -9,7 +9,7 @@
 import React from 'react';
 
 const FriendsDelete = (props) => (
-  <h1>Friends Delete</h1>
+  <h1>{props.name}</h1>
 );
 
 export default FriendsDelete;

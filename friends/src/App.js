@@ -63,6 +63,7 @@ class App extends Component {
   }
 
   newFriendHandler = newFriend => {
+    console.log('NEW FRIEND HANDLER INVOKED; newFriend: ', newFriend);
     this.friendsServer({
       method: 'POST',
       url: `${URL_BASE}/friends`,

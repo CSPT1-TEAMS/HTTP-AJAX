@@ -16,9 +16,9 @@ import { Route } from 'react-router-dom';
 import routeData from '../routes/route-data';
 
 const listRoutes = (routes, friendProps) =>
-  routes.map(({ path, exact, Component }, i) => (
+  routes.map(({ name, path, exact, Component }, i) => (
     <Route path={path} exact={exact} key={i}
-    render={ props => (<Component {...props} {...friendProps} />)} />
+    render={ props => (<Component {...props} {...friendProps} name={name} />)} />
   ));
 
 const Routes = (friendProps) => {

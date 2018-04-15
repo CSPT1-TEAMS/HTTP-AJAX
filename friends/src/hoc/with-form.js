@@ -12,7 +12,7 @@ import FriendForm from '../components/friend-form';
 
 const withForm = props => { return (WrappedList => (
   <div className="wrapped-list">
-    <WrappedList friends={props.friends} />
+    <WrappedList friends={props.friends} name={props.name} />
     <FriendForm newFriend={props.newFriend} />
   </div>
 ))};
