@@ -27,7 +27,6 @@
 
 import React from 'react';
 import Friend from './friend';
-import FriendForm from './friend-form';
 
 const listFriends = friends => {
   return friends.map(f => <Friend friend={f} key={f.id} />)

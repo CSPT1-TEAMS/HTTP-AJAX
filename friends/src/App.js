@@ -79,7 +79,7 @@ class App extends Component {
         </header>
         <div className="Friends" style={{ width: '100%', border: 'thin solid black' }}>
           <NavBar />
-          <Routes friends={this.state.friends} />
+          <Routes friends={this.state.friends} newFriend={this.newFriendHandler} />
         </div>
       </div>
     )
