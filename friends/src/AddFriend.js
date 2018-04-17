@@ -44,13 +44,17 @@ class AddFriend extends Component {
   
       return(
         <div>
+          <div>
           <form id="adding" onSubmit={this.handleFormSubmit}>
             <input type="text" value={name} onChange={this.handleFormName} placeHolder="Name"/>
             <input type="text" value={age} onChange={this.handleFormAge} placeHolder="Age"/>
             <input type="text" value={email} onChange={this.handleFormEmail} placeHolder="Email"/>
           </form>
-          <button type="submit" form="adding">Send Data!</button>
+          </div>
+          <div className="btn-NavButton"><button type="submit" form="adding">SEND DATA!</button></div>
+        
         </div>
+
   
         // render form here, get it passed in event function to setState, also, add button 'Submit'
       )
