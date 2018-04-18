@@ -23,7 +23,20 @@ class FriendsList extends Component {
       });
   }
 
- 
+ handleDelete = (event, id) => {
+   event.preventDefault();
+   let friendsOriginal = this.state.friends;
+   console.log(id);
+  axios
+    .delete(`http://localhost:5000/friends/${id}`)
+    .then(response => {
+      this.setState(() => ({friends: friendsOriginal.filter(friend => friend.id !== id )  }));
+    })
+    .catch(error => {
+      console.error("error", error);
+    });
+
+ }
   
   render() {
     return (
@@ -31,10 +44,13 @@ class FriendsList extends Component {
         <div className="friend-title">Lambda Friends</div>
           <ul className="friend-grid">
           {this.state.friends.map(friend => {
-            return (
-             <div><Friend key={friend.id} friend={friend}/>
-             <Link to={`/updateFriend/${friend.id}`}>Update</Link></div>
-            );
+            return <div>
+                <Friend key={friend.id} friend={friend} handleDelete={this.handleDelete} />
+                <Link to={`/updateFriend/${friend.id}`}>
+                  Update
+                </Link>
+                <button onClick={(e) => this.handleDelete(e, friend.id)}>X</button>
+              </div>;
           })}
         </ul>
        
