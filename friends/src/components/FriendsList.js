@@ -11,7 +11,7 @@ class FriendsList extends Component {
       friends: []
     };
   }
-
+//delete handler would go somewhere here?
   componentDidMount() {
     axios
       .get("http://localhost:5000/friends")
@@ -29,15 +29,15 @@ class FriendsList extends Component {
     return (
       <div>
         <div className="friend-title">Lambda Friends</div>
-        <Link to={`/updateFriend/${friend.id}`}>
-        <ul className="friend-grid">
+          <ul className="friend-grid">
           {this.state.friends.map(friend => {
             return (
-             <Friend key={friend.id} friend={friend}/>
+             <div><Friend key={friend.id} friend={friend}/>
+             <Link to={`/updateFriend/${friend.id}`}>Update</Link></div>
             );
           })}
         </ul>
-        </Link>
+       
         {/* <AddFriend />  */}
         <Link to="/addFriend"><button>NewFriend</button></Link>
       </div>
