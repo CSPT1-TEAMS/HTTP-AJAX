@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import FriendsList from "./FriendsList";
-// import AddFriend from "./components/AddFriend.js";
+
 // import UpdateFriend from "./components/UpdateFriend.js";
 
 import {Route} from 'react-router-dom';
